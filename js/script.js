@@ -1,29 +1,29 @@
 // FSJS - Random Quote Generator
 
 // Create the array of quote objects and name it quotes
-var quotes[
+var quotes = [
 {
   quote : "In football (soccer) as in watchmaking, talent and elegance mean nothing without rigour and precision.",
   source : "- Lionel Messi",
   position : ',Forward'
-}
+},
 {
-  quote : “When people succeed, it is because of hard work. Luck has nothing to do with success.”,
+  quote : 'When people succeed, it is because of hard work. Luck has nothing to do with success.',
   source : "- Diego Maradona",
   position : ',Midfielder'
-}
+},
 {
-  quote : “I see myself as the best footballer in the world. If you don’t believe you are the best, then you will never achieve all that you are capable of.”,
+  quote : 'I see myself as the best footballer in the world. If you don’t believe you are the best, then you will never achieve all that you are capable of.',
   source : "- Cristiano Ronaldo",
   position : ',Forward'
-}
+},
 {
-  quote : “I am constantly being asked about individuals. The only way to win is as a team. Football is not about one or two or three star players.”,
+  quote : 'I am constantly being asked about individuals. The only way to win is as a team. Football is not about one or two or three star players.',
   source : "– Pelé",
   position : ',Forward'
-}
+},
 {
-  quote : “It is not just about the money, it is about what you achieve on the pitch.”,
+  quote : 'It is not just about the money, it is about what you achieve on the pitch.',
   source : "- Ronaldinho",
   position : ',Midfielder'
 }
@@ -53,8 +53,8 @@ function timeout(){
 
 // Create the printQuote funtion and name it printQuote
 function printQuote(){
-  var string = '<p class="quote">' + getRandomQuote()[0] ' </p>' + '<p class="source">' + getRandomQuote()[1] + ' ' + getRandomQuote()[2] + '</p>';     // Structures sentence
-  document.getElementById('loadQuote').innerHTML = string;                                                                                              // Loads string
+  var string = '<p class="quote">' + getRandomQuote()[0] + '</p>' + '<p class="source">' + getRandomQuote()[1] + ' ' + getRandomQuote()[2] + '</p>';     // Structures sentence
+  document.getElementById('quote-box').innerHTML = string;                                                                                              // Loads string
   document.body.style.backgroundColor = getRandomColor();                                                                                               // Changes background color
   timeout();                                                                                                                                            // times out after 30 seconds
 }
