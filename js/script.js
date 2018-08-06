@@ -33,11 +33,8 @@ var quotes = [
 // Create the getRandomQuuote function and name it getRandomQuote
 function getRandomQuote(){
   var randomNumber = Math.floor(Math.random() * 5);                           // Gets a random number between 0 and 4
-  var randomQuote = quotes[randomNumber].quote;                               // Retrieves the random quote
-  var randomSource = quotes[randomNumber].source;                             // Retrieves the random source
-  var randomPosition = quotes[randomNumber].position;                         // Retrieves the random positon
-  var randomSentence = [randomQuote, randomSource, randomPosition];           // puts all the Random parts into 1 array to be returned
-  return randomSentence;
+  var randomQuote = quotes[randomNumber];                                     // Retrieves the random quote
+  return randomQuote;
 }
 function getRandomColor(){
   var randomR = Math.floor(Math.random() * 255);                            // Gets a random number between 1  and 254
@@ -48,15 +45,16 @@ function getRandomColor(){
 }
 
 function timeout(){
-  var timeoutID = window.setTimeout(printQuote(), 30000);                   // times out after 30 seconds and prints Quote again
+    printQuote();                 // times out after 30 seconds and prints Quote again
 }
 
 // Create the printQuote funtion and name it printQuote
 function printQuote(){
-  var string = '<p class="quote">' + getRandomQuote()[0] + '</p>' + '<p class="source">' + getRandomQuote()[1] + ' ' + getRandomQuote()[2] + '</p>';     // Structures sentence
+  document.body.innerHTML = '';
+  var string = '<p class="quote">' + getRandomQuote().quote + '</p>' + '<p class="source">' + getRandomQuote().source + ' ' + getRandomQuote().position + '</p>';     // Structures sentence
   document.getElementById('quote-box').innerHTML = string;                                                                                              // Loads string
-  document.body.style.backgroundColor = getRandomColor();                                                                                               // Changes background color
-  timeout();                                                                                                                                            // times out after 30 seconds
+  document.body.style.backgroundColor = getRandomColor();                                                                                                 // Changes background color
+  var timeoutID = scope.setTimeout(timeout[,30000]);                                                                                                                                           // times out after 30 seconds
 }
 
 
