@@ -50,11 +50,10 @@ function timeout(){
 
 // Create the printQuote funtion and name it printQuote
 function printQuote(){
-  document.body.innerHTML = '';
   var string = '<p class="quote">' + getRandomQuote().quote + '</p>' + '<p class="source">' + getRandomQuote().source + ' ' + getRandomQuote().position + '</p>';     // Structures sentence
   document.getElementById('quote-box').innerHTML = string;                                                                                              // Loads string
   document.body.style.backgroundColor = getRandomColor();                                                                                                 // Changes background color
-  var timeoutID = scope.setTimeout(timeout[,30000]);                                                                                                                                           // times out after 30 seconds
+  var timeoutID = setTimeout(timeout, 30000);                                                                                                                                           // times out after 30 seconds
 }
 
 
